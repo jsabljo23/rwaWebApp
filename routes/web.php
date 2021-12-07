@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\URL;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,4 +20,6 @@ Route::get('/', function () {
 
 Route::view('/onama', 'onama');
 Route::view('/info', 'info');
+
+URL::forceRootUrl('http://studenti.sum.ba/projekti/rwa/2022/g18');
 
