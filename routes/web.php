@@ -21,5 +21,5 @@ Route::get('/', function () {
 Route::view('/onama', 'onama');
 Route::view('/info', 'info');
 
-URL::forceRootUrl('http://studenti.sum.ba/projekti/rwa/2022/g18');
+//URL::forceRootUrl('http://studenti.sum.ba/projekti/rwa/2022/g18');
 
