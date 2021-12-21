@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\URL;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\UserController;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,8 +21,32 @@ Route::get('/', function () {
     return view('homepage');
 });
 
+Route::middleware(['middleware'=>'PreventBackHistory'])->group(function(){
+
+    Auth::routes();
+});
+
 Route::view('/onama', 'onama');
 Route::view('/info', 'info');
 
 //URL::forceRootUrl('http://studenti.sum.ba/projekti/rwa/2022/g18');
 
+
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::group(['prefix'=>'admin' , 'middleware'=>['isAdmin','auth','PreventBackHistory']], function(){
+
+    Route::get('dashboard',[AdminController::class,'index'])->name('admin.dashboard');
+    Route::get('profile',[AdminController::class,'profile'])->name('admin.profile');
+    Route::get('settings',[AdminController::class,'settings'])->name('admin.settings');
+
+});
+
+Route::group(['prefix'=>'user' , 'middleware'=>['isUser','auth','PreventBackHistory']], function(){
+
+    Route::get('dashboard',[UserController::class,'index'])->name('user.dashboard');
+    Route::get('profile',[UserController::class,'profile'])->name('user.profile');
+    Route::get('settings',[UserController::class,'settings'])->name('user.settings');
+
+});
