@@ -27,7 +27,7 @@ class UserController extends Controller
             ]);
 
             $newImageName = time() . "-" . $request->marka .".". $request->image->extension();
-            $request->image->move(public_path('images/shopCars'), $newImageName);
+            $request->image->move(public_path('images/'), $newImageName);
             $query = DB::table('cars')->insert([
     
                 'marka' => $request->input('marka'),
@@ -62,7 +62,7 @@ class UserController extends Controller
 
             $newImageName = time() . "-" . $request->marka .".". $request->image->extension();
 
-            $request->image->move(public_path('images/shopParts'), $newImageName);
+            $request->image->move(public_path('images/'), $newImageName);
 
 
             $query = DB::table('parts')->insert([
