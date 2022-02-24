@@ -31,7 +31,10 @@ class LoginController extends Controller
 
     protected function redirectTo(){
 
-        if( Auth()->user()->role == 1){
+        if( Auth()->user()->role == 0){
+            return route('superadmin.dashboard');
+        }
+        elseif( Auth()->user()->role == 1){
             return route('admin.dashboard');
         }
         elseif(Auth()->user()==2){
@@ -60,8 +63,11 @@ class LoginController extends Controller
 
         if( auth()->attempt(array('email'=>$input['email'],'password'=>$input['password']))){
 
-            if( auth()->user()->role == 1 ){
-                return redirect()->route('admin.dashboard');
+            if( Auth()->user()->role == 0){
+                return route('superadmin.dashboard');
+            }
+            elseif( Auth()->user()->role == 1){
+                return route('admin.dashboard');
             }
             elseif( auth()->user()->role ==2 ){
                 return redirect()->route('user.dashboard');

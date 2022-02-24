@@ -6,7 +6,7 @@
     <div class="container-fluid d-flex">
         <div class="row flex-fill">
             <div class="col-md-6 antePics text-center">
-                <img src="../images/ante.jpeg" alt="" width="200px" height="300px" >
+                <img src="{{url('/images/ante.jpeg')}}" alt="" width="200px" height="300px" >
             </div>
             <div class="col-md-6 infoAnte">
                 <br>
@@ -30,7 +30,7 @@
     </div>
     <div class="row flex-fill">
         <div class="col-md-6 jurePics text-center">
-            <img src="../images/jure.jpg" alt="" width="200px" height="300px" >
+            <img src="{{ url('/images/jure.jpg') }}" alt="" width="200px" height="300px" >
         </div>
         <div class="col-md-6 infoJure">
             <br>

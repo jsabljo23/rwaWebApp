@@ -1,22 +1,18 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
-
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    {{ __('You are logged in!') }}
+<div class="container-fluid d-flex justify-content-center">
+    <div class="row flex-fill">
+        <div class="col-md-12 userBac">
+            <div class="flexbox">
+                <div class="search">
+                  <h1>Bok {{ Auth::user()->name }}</h1>
+                  <h3>Uspjesno ste se registrirali</h3>
+                  <br>
+                  <a href="{{ route('user.profile') }}" class="btn btn-outline-light btn-rounded">Prijedi na profil</a>
+                  <a href="{{ route('user.dashboard') }}" class="btn btn-outline-light btn-rounded">Prijedi na prodaju</a>
                 </div>
-            </div>
+              </div> 
         </div>
     </div>
 </div>

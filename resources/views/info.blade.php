@@ -29,7 +29,14 @@
             <p>Laravel framework</p>
             <hr>
             <p>MySql</p>
-
+        </div>
+    </div>
+    <div class="row flex-fill">
+        <div class="col-md-12 text-center bg-primary">
+            <br>
+            <a href="https://drive.google.com/file/d/16IE_ppiGiiJknBqF9XktrZOWGWgMnPWM/view?usp=sharing" class="btn btn-info">Dokumentacija</a>
+            <br>
+            <br>
         </div>
     </div>
 </div>
