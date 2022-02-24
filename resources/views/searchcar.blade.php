@@ -26,7 +26,7 @@
             @foreach ($cars as $car )
             <div class="col-md-3 itemsShop">
                 <hr>
-                <img src="{{ asset('images/shopCars/' . $car->image_path) }}" alt="" height="200px" width="100%">
+                <img src="{{ asset('images/' . $car->image_path) }}" alt="" height="200px" width="100%">
                 <div class="col-md-12">
                     <hr>
                     <p>{{ $car->id }} | {{ $car->marka }} | {{ $car->model }} | {{ $car->godina }}</p>
@@ -49,7 +49,7 @@
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="close"></button>
                                 </div>
                                 <div class="modal-body">
-                                    <img src="{{ asset('images/shopCars/' . $car->image_path) }}" alt="" height="300px" width="100%">
+                                    <img src="{{ asset('images/' . $car->image_path) }}" alt="" height="300px" width="100%">
                                     <hr>
                                     <p>Prodavac:</p>
                                     <ul>
